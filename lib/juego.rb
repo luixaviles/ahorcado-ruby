@@ -6,6 +6,6 @@ class Juego
 		@palabra
 	end
 	def get_mascara
-		@mascara = "__________"
+		@mascara = "_ _ _ _ _ _ _ _ _ _"
 	end
 end

@@ -13,6 +13,6 @@ describe Juego do
 
 	it "deberiamos mostrar 10 guiones para la palabra secreta" do
 		mascara = @juego.get_mascara
-		mascara.should == "__________"
+		mascara.should == "_ _ _ _ _ _ _ _ _ _"
 	end
 end
