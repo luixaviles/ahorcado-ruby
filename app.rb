@@ -1,5 +1,10 @@
 require 'sinatra'
+require './lib/juego'
 
+configure do
+	@@juego= Juego.new
+end
 get '/' do
-    "Bienvenido iniciaste el juego"
+    @mascara=@@juego.get_mascara
+     erb :index
 end

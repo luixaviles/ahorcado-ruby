@@ -5,4 +5,7 @@ class Juego
 	def get_palabra
 		@palabra
 	end
+	def get_mascara
+		@mascara = "__________"
+	end
 end

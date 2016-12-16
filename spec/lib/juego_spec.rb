@@ -10,4 +10,9 @@ describe Juego do
 		palabra = @juego.get_palabra
 		palabra.should == "DESARROLLO"
 	end 
+
+	it "deberiamos mostrar 10 guiones para la palabra secreta" do
+		mascara = @juego.get_mascara
+		mascara.should == "__________"
+	end
 end
