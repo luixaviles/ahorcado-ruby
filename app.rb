@@ -13,7 +13,8 @@ get '/' do
 	palabra = params[:palabra]
 	puts "leyendo #{palabra}"
 	@@juego= Juego.new
-	@@juego.set_palabra(palabra || "DESARROLLO")
+	palabra = palabra || @@juego.generar_palabra()
+	@@juego.set_palabra(palabra)
 	@@intentos =@@juego.get_intentos
 	@@palabra_secreta = @@juego.get_palabra
     @mascara=@@juego.get_mascara
