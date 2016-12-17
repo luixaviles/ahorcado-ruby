@@ -31,3 +31,14 @@ Scenario: Muestra mensaje "Ganaste la Partida"
 		And ingresa una "L"
 		And hago click en el boton "id_Adivinar"		
 	Then deberia mostrar "Ganaste la partida"
+
+Scenario: Mostrar numero de intentos
+	Given visito la pagina principal
+	Then deberia mostrar "#intentos : 6"
+
+Scenario: Deberia descontar intentos al ingresar una letra incorrecta
+	Given visito la pagina principal
+	When ingresa una "X"
+		And hago click en el boton "id_Adivinar"
+	Then deberia mostrar "#intentos : 5"
+	

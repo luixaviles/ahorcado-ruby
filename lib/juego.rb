@@ -5,6 +5,7 @@ class Juego
 		@letra = ""	
 		@mascara = "_ _ _ _ _ _ _ _ _ _"
 		@array_mascara = @mascara.split " "
+		@intentos=6
 	end
 	def get_palabra
 		@palabra
@@ -16,11 +17,16 @@ class Juego
 		@letra
 	end		
 	def actualizar(letra)
+		caracter_encontrado=false
 		@array_palabra.each_with_index{ |caracter, index|
 			if caracter == letra
-				@array_mascara[index] = letra 			
+				@array_mascara[index] = letra
+				caracter_encontrado=true		
 			end
 		}
+		if(!caracter_encontrado)
+			@intentos-=1
+		end
 	end
 
 	def get_resultado
@@ -29,5 +35,8 @@ class Juego
 		end
 
 		return @resultado
+	end
+	def get_intentos
+		@intentos
 	end
 end 

@@ -37,4 +37,15 @@ describe Juego do
 		resultado.should == "Ganaste la partida"
 	end
 	
+	it "deberia definir 6 intentos por defecto al iniciar el juego" do
+		resultado = @juego.get_intentos
+		resultado.should == 6
+	end
+
+	it "deberia descontar intentos al introducir una letra incorrecta" do
+		@juego.actualizar('X')
+		resultado = @juego.get_intentos
+		resultado.should == 5
+	end
+	
 end

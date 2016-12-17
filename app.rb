@@ -3,6 +3,7 @@ require './lib/juego'
 
 configure do
 	@@juego= Juego.new
+	@@intentos =@@juego.get_intentos
 end
 get '/' do
     @mascara=@@juego.get_mascara
@@ -13,5 +14,6 @@ post '/actualizar' do
     @@juego.actualizar(@letra)
     @mascara=@@juego.get_mascara
     @resultado = @@juego.get_resultado
+	@@intentos =@@juego.get_intentos
     erb :index
 end
