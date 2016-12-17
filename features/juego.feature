@@ -10,12 +10,14 @@ Scenario: Mostrar los guiones separados por espacios
 
 Scenario: Cambiar la letra ingresada por el guion 
 	Given visito la pagina principal
+		And palabra secreta es "DESARROLLO"
 	When ingresa una "D"
 		And hago click en el boton "id_Adivinar"
 	Then deberia mostrar "D _ _ _ _ _ _ _ _ _" 
 
 Scenario: Muestra mensaje "Ganaste la Partida"
 	Given visito la pagina principal
+		And palabra secreta es "DESARROLLO"
 	When ingresa una "D"
 		And hago click en el boton "id_Adivinar"
 		And ingresa una "E"
@@ -38,12 +40,14 @@ Scenario: Mostrar numero de intentos
 
 Scenario: Deberia descontar intentos al ingresar una letra incorrecta
 	Given visito la pagina principal
+		And palabra secreta es "DESARROLLO"
 	When ingresa una "X"
 		And hago click en el boton "id_Adivinar"
 	Then deberia mostrar "#intentos : 5"
 
 Scenario: Muestra mensaje Partida Perdida
 	Given visito la pagina principal
+		And palabra secreta es "DESARROLLO"
 	When ingresa una "X"
 		And hago click en el boton "id_Adivinar"
 		And ingresa una "P"
@@ -62,6 +66,7 @@ Scenario: Muestra mensaje Partida Perdida
 
 Scenario: Muestra la Palabra Secreta al Perder la Partida
 	Given visito la pagina principal
+		And palabra secreta es "DESARROLLO"
 	When ingresa una "X"
 		And hago click en el boton "id_Adivinar"
 		And ingresa una "P"
@@ -80,6 +85,7 @@ Scenario: Muestra la Palabra Secreta al Perder la Partida
 
 Scenario: Permite reiniciar el juego al perder la partida
 	Given visito la pagina principal
+		And palabra secreta es "DESARROLLO"
 	When ingresa una "X"
 		And hago click en el boton "id_Adivinar"
 		And ingresa una "P"

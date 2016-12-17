@@ -17,3 +17,7 @@ end
 Then(/^deberia mostrar boton "(.*?)"$/) do |name|
   click_button(name)
 end
+
+Given(/^palabra secreta es "(.*?)"$/) do |secreta|
+  last_response.body.should =~ /#{secreta}/m
+end

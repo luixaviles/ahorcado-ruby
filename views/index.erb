@@ -6,6 +6,7 @@
  <form method= "post" action= '/actualizar'>
  	<input type='text' name='letra' id='letra'>
  	<input type='submit' value='Adivinar' id="id_Adivinar">
+ 	<input type="hidden" name="palabra_secreta" value="<%=@@palabra_secreta%>">
  </form>
 
 <label><%= @resultado %></label>
@@ -15,6 +16,10 @@
 </form>
 
 <label>La palabra secreta es: <%= @palabra_secreta %></label>
+
+<% if(@@intentos <= 0) %>
+	<label>La palabra secreta es: <%= @@palabra_secreta %></label>
+<% end %>
 
 <form method="get" action= '/'>
  	<input type='submit' value='Reiniciar Juego'>
