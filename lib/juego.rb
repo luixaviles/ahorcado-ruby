@@ -1,15 +1,39 @@
 class Juego
 	def initialize
-		@palabra = 'DESARROLLO'	
+		@PALABRAS = ['DESARROLLO', 'SALON', 'SOFTWARE', 'RUBY', 'CUCUMBER']
+		@palabra = generar_palabra()	
+		puts @palabra
 		@array_palabra = @palabra.split ""
 		@letra = ""	
-		@mascara = "_ _ _ _ _ _ _ _ _ _"
-		@array_mascara = @mascara.split " "
 		@intentos=6
 		@pista= "... de software"
+		init_mascara()
+	end
+	def generar_palabra
+		r = Random.new
+		index = r.rand(0...4)
+		@PALABRAS[index]
+	end
+	def generar_mascara(palabra)
+		mascara = ''
+		palabra_array = palabra.split ''
+		palabra_array.each_with_index{ |caracter, index|
+			mascara = mascara + '_ '
+		}
+		mascara = mascara[0, mascara.length-1]
+		return mascara
+	end
+	def init_mascara
+		@mascara = generar_mascara(@palabra)
+		@array_mascara = @mascara.split " "
 	end
 	def get_palabra
 		@palabra
+	end
+	def set_palabra(palabra)
+		@palabra = palabra
+		@array_palabra = @palabra.split ""
+		init_mascara()
 	end
 	def get_mascara
 		@mascara = @array_mascara.join ' '

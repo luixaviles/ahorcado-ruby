@@ -21,6 +21,7 @@ end
 
 post '/actualizar' do
     @letra = params[:letra]
+    @@palabra_secreta = @@juego.get_palabra
     @@juego.actualizar(@letra)
     @mascara=@@juego.get_mascara
     @resultado = @@juego.get_resultado

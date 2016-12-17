@@ -3,7 +3,9 @@ require 'juego'
 
 describe Juego do 
 	before (:each) do
+		@palabra = 'DESARROLLO'
 		@juego = Juego.new
+		@juego.set_palabra(@palabra)
 	end
 
 	it "deberia tener la palabra secreta por defecto generada" do

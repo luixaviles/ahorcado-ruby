@@ -1,5 +1,5 @@
 Given(/^visito la pagina principal$/) do
-	visit '/'
+	visit '/?palabra=DESARROLLO'
 end
 
 Then(/^deberia ver el mensaje "([^"]*)"$/) do |text|
