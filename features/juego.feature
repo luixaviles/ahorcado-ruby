@@ -77,3 +77,22 @@ Scenario: Muestra la Palabra Secreta al Perder la Partida
 		And ingresa una "Y"
 		And hago click en el boton "id_Adivinar"		
 	Then deberia mostrar "La palabra secreta es: DESARROLLO"
+
+Scenario: Permite reiniciar el juego al perder la partida
+	Given visito la pagina principal
+	When ingresa una "X"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "P"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "Z"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "J"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "K"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "U"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "Y"
+		And hago click en el boton "id_Adivinar"
+		And hago click en el boton "Reiniciar Juego"		
+	Then deberia mostrar "#intentos : 6"
