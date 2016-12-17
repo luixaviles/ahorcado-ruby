@@ -10,7 +10,10 @@ configure do
 end
 
 get '/' do
+	palabra = params[:palabra]
+	puts "leyendo #{palabra}"
 	@@juego= Juego.new
+	@@juego.set_palabra(palabra || "DESARROLLO")
 	@@intentos =@@juego.get_intentos
 	@@palabra_secreta = @@juego.get_palabra
     @mascara=@@juego.get_mascara
