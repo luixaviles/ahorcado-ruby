@@ -4,10 +4,12 @@ require './lib/juego'
 configure do
 	@@juego= Juego.new
 	@@intentos =@@juego.get_intentos
+	@@palabra_secreta = @@juego.get_palabra
 end
 get '/' do
 	@@juego= Juego.new
 	@@intentos =@@juego.get_intentos
+	@@palabra_secreta = @@juego.get_palabra
     @mascara=@@juego.get_mascara
      erb :index
 end
@@ -17,8 +19,5 @@ post '/actualizar' do
     @mascara=@@juego.get_mascara
     @resultado = @@juego.get_resultado
 	@@intentos =@@juego.get_intentos
-	if(@@intentos <= 0)
-		@palabra_secreta = @@juego.get_palabra
-	end
-    erb :index
+	erb :index
 end
