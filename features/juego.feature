@@ -107,3 +107,8 @@ Scenario: Permitir al usuario ver pista
 	Given visito la pagina principal
 	When hago click en el boton "ver_pista"
 	Then deberia mostrar "Pista: "
+
+Scenario: Descontar intentos al ver pista
+	Given visito la pagina principal
+	When hago click en el boton "ver_pista"
+	Then deberia mostrar "#intentos : 5"

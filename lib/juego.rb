@@ -70,6 +70,7 @@ class Juego
 		@intentos
 	end
 	def get_pista
+		@intentos-=1
 		@pista
 	end
 end 

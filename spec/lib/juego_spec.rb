@@ -67,5 +67,11 @@ describe Juego do
 		pista= @juego.get_pista
 		pista.should == "... de software"
 	end
+
+	it "deberia reducir intentos cuando pide ver pista" do
+		@juego.get_pista
+		resultado = @juego.get_intentos
+		resultado.should == 5
+	end
 	
 end
