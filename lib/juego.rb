@@ -6,6 +6,7 @@ class Juego
 		@mascara = "_ _ _ _ _ _ _ _ _ _"
 		@array_mascara = @mascara.split " "
 		@intentos=6
+		@pista= "... de software"
 	end
 	def get_palabra
 		@palabra
@@ -43,5 +44,8 @@ class Juego
 	end
 	def get_intentos
 		@intentos
+	end
+	def get_pista
+		@pista
 	end
 end 

@@ -10,8 +10,14 @@
 
 <label><%= @resultado %></label>
 
+<form method="get" action= '/pista'>
+ 	<input type='submit' value='Ver Pista' id="ver_pista">
+</form>
+
 <label>La palabra secreta es: <%= @palabra_secreta %></label>
 
-<form method= "get" action= '/'>
+<form method="get" action= '/'>
  	<input type='submit' value='Reiniciar Juego'>
- </form>
+</form>
+
+Pista: <%=@pista%>

@@ -60,5 +60,10 @@ describe Juego do
 		resultado = @juego.get_resultado
 		resultado.should == "Partida Perdida"
 	end
+
+	it "deberia mostrar pista cuando pide ver pista" do
+		pista= @juego.get_pista
+		pista.should == "... de software"
+	end
 	
 end

@@ -96,3 +96,8 @@ Scenario: Permite reiniciar el juego al perder la partida
 		And hago click en el boton "id_Adivinar"
 		And hago click en el boton "Reiniciar Juego"		
 	Then deberia mostrar "#intentos : 6"
+
+Scenario: Permitir al usuario ver pista
+	Given visito la pagina principal
+	When hago click en el boton "ver_pista"
+	Then deberia mostrar "Pista: "
