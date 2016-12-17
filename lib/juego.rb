@@ -20,6 +20,14 @@ class Juego
 			if caracter == letra
 				@array_mascara[index] = letra 			
 			end
-		}				
+		}
+	end
+
+	def get_resultado
+		if get_mascara == 'D E S A R R O L L O'
+			@resultado = "Ganaste la partida"
+		end
+
+		return @resultado
 	end
 end 

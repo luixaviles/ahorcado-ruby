@@ -17,4 +17,3 @@ end
 When(/^hago click en el boton "([^"]*)"$/) do |name|
   click_button(name)
 end
-

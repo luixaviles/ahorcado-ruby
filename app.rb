@@ -12,5 +12,6 @@ post '/actualizar' do
     @letra = params[:letra]
     @@juego.actualizar(@letra)
     @mascara=@@juego.get_mascara
+    @resultado = @@juego.get_resultado
     erb :index
 end

@@ -12,4 +12,22 @@ Scenario: Cambiar la letra ingresada por el guion
 	Given visito la pagina principal
 	When ingresa una "D"
 		And hago click en el boton "id_Adivinar"
-	Then deberia mostrar "D _ _ _ _ _ _ _ _ _"  
+	Then deberia mostrar "D _ _ _ _ _ _ _ _ _" 
+
+Scenario: Muestra mensaje "Ganaste la Partida"
+	Given visito la pagina principal
+	When ingresa una "D"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "E"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "S"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "A"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "R"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "O"
+		And hago click en el boton "id_Adivinar"
+		And ingresa una "L"
+		And hago click en el boton "id_Adivinar"		
+	Then deberia mostrar "Ganaste la partida"

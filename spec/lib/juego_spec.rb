@@ -22,4 +22,19 @@ describe Juego do
 		mascara = @juego.get_mascara
 		mascara.should == "D _ _ _ _ _ _ _ _ _"
 	end
+
+	it "deberiamos mostrar 'Ganaste la Partida' al adivinar todas las letras" do
+		@juego.actualizar('D')
+		@juego.actualizar('E')
+		@juego.actualizar('S')
+		@juego.actualizar('A')
+		@juego.actualizar('R')
+		@juego.actualizar('O')
+		@juego.actualizar('L')
+		
+		# letra = @juego.get_letra
+		resultado = @juego.get_resultado
+		resultado.should == "Ganaste la partida"
+	end
+	
 end
