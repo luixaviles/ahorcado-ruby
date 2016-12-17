@@ -47,5 +47,18 @@ describe Juego do
 		resultado = @juego.get_intentos
 		resultado.should == 5
 	end
+
+	it "deberiamos mostrar 'Partida Perdida' al descontar todos los intentos" do
+		@juego.actualizar('Z')
+		@juego.actualizar('W')
+		@juego.actualizar('Q')
+		@juego.actualizar('T')
+		@juego.actualizar('U')
+		@juego.actualizar('M')
+		@juego.actualizar('Y')
+
+		resultado = @juego.get_resultado
+		resultado.should == "Partida Perdida"
+	end
 	
 end

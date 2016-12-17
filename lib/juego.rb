@@ -18,15 +18,20 @@ class Juego
 	end		
 	def actualizar(letra)
 		caracter_encontrado=false
-		@array_palabra.each_with_index{ |caracter, index|
-			if caracter == letra
-				@array_mascara[index] = letra
-				caracter_encontrado=true		
+		if (@intentos>0)
+			@array_palabra.each_with_index{ |caracter, index|
+				if caracter == letra
+					@array_mascara[index] = letra
+					caracter_encontrado=true		
+				end
+			}
+			if(!caracter_encontrado)
+				@intentos-=1
 			end
-		}
-		if(!caracter_encontrado)
-			@intentos-=1
+		else
+			@resultado= "Partida Perdida"
 		end
+		
 	end
 
 	def get_resultado
