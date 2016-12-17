@@ -11,9 +11,7 @@
 
 <label><%= @resultado %></label>
 
-<form method="get" action= '/pista'>
- 	<input type='submit' value='Ver Pista' id="ver_pista">
-</form>
+
 
 <% if(@@intentos <= 0) %>
 	<label>La palabra secreta es: <%= @@palabra_secreta %></label>
@@ -24,4 +22,8 @@
 
 <% if(@pista_habilitada) %>
 Pista: <%=@pista%>
+<%else%>
+	<form method="get" action= '/pista'>
+ 		<input type='submit' value='Ver Pista' id="ver_pista">
+	</form>
 <% end %>

@@ -31,5 +31,7 @@ end
 get '/pista' do
 	@pista=@@juego.get_pista
 	@pista_habilitada=true
+	@mascara=@@juego.get_mascara
+	@@intentos =@@juego.get_intentos
      erb :index
 end
