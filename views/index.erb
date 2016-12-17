@@ -1,4 +1,9 @@
 
  <h2>Bienvenido iniciaste el juego</h2> <br><br>
 
- <label><%= @mascara %></label> 
+ <label><%= @mascara %></label> <br><br>
+
+ <form method= "post" action= '/actualizar'>
+ 	<input type='text' name='letra' id='letra'>
+ 	<input type='submit' value='Adivinar' id="id_Adivinar">
+ </form>

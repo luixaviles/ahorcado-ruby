@@ -8,3 +8,9 @@ get '/' do
     @mascara=@@juego.get_mascara
      erb :index
 end
+post '/actualizar' do
+    @letra = params[:letra]
+    @@juego.actualizar(@letra)
+    @mascara=@@juego.get_mascara
+    erb :index
+end

@@ -6,4 +6,15 @@ Then(/^deberia mostrar "([^"]*)"$/) do |guion|
   last_response.body.should =~ /#{guion}/m
 end
 
+When(/^ingresa una "([^"]*)"$/) do |letra|
+	fill_in('letra', :with => letra)
+end
+
+Then(/^deberia mostrar un "([^"]*)"$/) do |arg1|
+	last_response.body.should =~ /#{guion}/m
+end
+
+When(/^hago click en el boton "([^"]*)"$/) do |name|
+  click_button(name)
+end
 
